@@ -4,7 +4,7 @@ import {UserInfo} from "../../shared/interface/user-info";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 
-const BACK = 'http://backend:8080/questionnaire'
+const BACK = 'http://localhost:8080/questionnaire'
 
 @Injectable({providedIn: 'root'})
 export class BackendService {
