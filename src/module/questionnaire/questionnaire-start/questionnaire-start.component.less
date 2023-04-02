@@ -1,0 +1,132 @@
+:host {
+    display: block;
+}
+
+.content {
+    height: 100vh;
+    background-image: url("../../../assets/bg.jpg");
+    //background-size: 180% 13%;
+    background-repeat: repeat-y;
+    background-position: 50% 10%;
+    padding: 50px;
+}
+
+.title {
+    text-align: center;
+    font-size: 20pt;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    line-height: 25px;
+}
+
+.name {
+    font-size: 40pt;
+    text-align: center;
+    line-height: 38px;
+    margin-bottom: 80px;
+    font-weight: 600;
+}
+
+.line{
+    margin-left: 5px;
+    margin-right: 5px;
+    white-space: break-spaces;
+}
+
+.line:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: black;
+}
+
+.line:after {
+    content: '';
+    display: block;
+    height: 1px;
+    background: black;
+}
+
+.date {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20pt;
+    margin-bottom: 60px;
+}
+
+.number-date {
+    font-size: 45px;
+}
+
+.date-countdown {
+    max-width: 400px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.tui-table__td_align_center {
+    text-align: center;
+}
+
+.date-countdown-item {
+    margin-right: 20px;
+    width: 2rem;
+}
+
+.date-countdown-name {
+    font-size: 11pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.date-countdown-name-item {
+    margin-right: 20px;
+    width: 2rem;
+}
+
+//.date-countdown-name-item:first-child {
+//    margin-right: 30px;
+//}
+
+.button {
+    background-color: #66b777;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.button:first-child {
+    margin-right: 30px;
+}
+
+.button:nth-child(2) {
+    margin-left: 30px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.ring {
+    width: 80vw;
+}
+
+@media screen and (max-height: 700px)  {
+    .title {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}

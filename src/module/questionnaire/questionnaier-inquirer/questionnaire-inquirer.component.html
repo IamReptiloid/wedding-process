@@ -1,0 +1,307 @@
+<div class="content" *ngIf="userInfo$ | async as userInfo">
+    <div class="container">
+        <b>{{userInfo.name}}</b><br/>
+        <hr/>
+        <br/>
+        <p class="block">
+            21 июля для нас особенный день, мы уверены, что он откроет новую счастливую главу нашей жизни. Мы будем очень рады, если вы проведете этот день с нами и подарите свои улыбки.
+
+            Приглашаем вас на праздничный банкет!
+
+            <br/>
+        </p>
+        <b>Программа мероприятия</b>
+
+        <div class="container-table-container">
+            <div class="table-container">
+                <table class="tui-table tui-table_font-size_l tui-table__td_text_right">
+                    <tbody>
+                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                        <td class="tui-table__td tui-table__td_text_right">15:00</td>
+                        <td class="tui-table__td ">Фуршет</td>
+                    </tr>
+                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                        <td class="tui-table__td tui-table__td_text_right">16:00</td>
+                        <td class="tui-table__td">Свадебный банкет</td>
+                    </tr>
+                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                        <td class="tui-table__td tui-table__td_text_right">20:00</td>
+                        <td class="tui-table__td">Вынос торта</td>
+                    </tr>
+                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                        <td class="tui-table__td tui-table__td_text_right">21:00-22:30</td>
+                        <td class="tui-table__td">Дискотека</td>
+                    </tr>
+                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                        <td class="tui-table__td tui-table__td_text_right">22:30</td>
+                        <td class="tui-table__td">Трансфер в город</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="block">
+            <p class="info">
+                Мы старались сделать праздник красивым и будем рады, если поддержите цветовую гамму нашей свадьбы
+            </p>
+            <div class="palette">
+                <div class="palette-item color1"></div>
+                <div class="palette-item color2"></div>
+                <div class="palette-item color3"></div>
+                <div class="palette-item color4"></div>
+                <div class="palette-item color5"></div>
+                <div class="palette-item color6"></div>
+                <div class="palette-item color7"></div>
+                <div class="palette-item color8"></div>
+                <div class="palette-item color9"></div>
+            </div>
+        </div>
+
+        <form [formGroup]="form" class="form">
+
+            <div class="block">
+                <p class="info">
+                    Банкет состоится в КСК История по адресу Сергеевка д. 47. Начало в 15:00. Нужен ли вам трансфер до места проведения мероприятия
+                </p>
+
+                <div
+                    tuiGroup
+                    orientation="vertical"
+                    class="group"
+                    [collapsed]="false"
+                >
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="transfer"
+                        item="Нет"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Нет</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="transfer"
+                        item="Только до торжества"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Только до торжества</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="transfer"
+                        item="Только после торжества"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Только после торжества</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="transfer"
+                        item="До и после торжества"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">До и после торжества</div>
+                        </div>
+                    </tui-radio-block>
+                </div>
+                <tui-error
+                    formControlName="transfer"
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
+                <p>Для вашего удобства будет организован трансфер. Он пойдет по маршруту Кальное ТЦ Круиз-Победа (остановка ТЦ Виктория Плаза со стороны торгового центра)- Московское шоссе (остановка таможня) - КСК История. Время отправления трансфера 13:30.</p>
+            </div>
+
+            <div class="block">
+                <p class="info">Какой алкоголь вы предпочитаете?</p>
+                <div
+                    tuiGroup
+                    orientation="vertical"
+                    class="group"
+                    [collapsed]="false"
+                >
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="alcohol"
+                        item="Красное вино"
+                        size="l"
+                    >
+                        <div class="radio-block-name">Красное вино</div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="alcohol"
+                        item="Белое вино"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Белое вино</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="alcohol"
+                        item="Шампанское"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Шампанское</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="alcohol"
+                        item="Виски\Коньяк"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Виски\Коньяк</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="alcohol"
+                        item="Водка"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Водка</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="alcohol"
+                        item="Не буду пить"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Не буду пить</div>
+                        </div>
+                    </tui-radio-block>
+                </div>
+                <tui-error
+                    formControlName="alcohol"
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
+            </div>
+
+            <div class="block">
+                <p class="info">Придете ли вы на мероприятие один или со спутником?</p>
+                <div
+                    tuiGroup
+                    class="group"
+                    [collapsed]="true"
+                >
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        [formControl]="isSatellites"
+                        item="single"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Один</div>
+                        </div>
+                    </tui-radio-block>
+                    <tui-radio-block
+                        class="radio-block"
+                        contentAlign="left"
+                        [formControl]="isSatellites"
+                        item="not alone"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">Не один</div>
+                        </div>
+                    </tui-radio-block>
+                </div>
+                <tui-error
+                    [formControl]="isSatellites"
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
+
+                <ng-container *ngIf="isSatellites.valueChanges | async as status">
+                    <div *ngIf="status !== 'single'" formArrayName="satellites">
+                        <ng-container *ngFor="let satellite of getFormsControls()['controls']; let i = index">
+                            <tui-input class="radio-block" formControlName="{{i}}">Имя спутника</tui-input>
+                            <tui-error
+                                formControlName="{{i}}"
+                                [error]="[] | tuiFieldError | async"
+                            ></tui-error>
+                        </ng-container>
+                        <button class="button" tuiButton appearance="secondary" (click)="add()">Добавить</button>
+                        <button tuiButton appearance="secondary" (click)="delete()">Удалить</button>
+                    </div>
+                </ng-container>
+
+            </div>
+
+            <div class="block">
+                <p class="info">
+                    Если вы не знаете, что подарить, то мы будем рады вкладу в бюджет нашей семьи. Но если и такой вариант вам не подходит, то будем благодарны принять подарок из нашего виш листа.
+                    <tui-tooltip
+                        content="Отображаемые подарки еще не забранированы другими приглашенными"
+                        direction="top-left"
+                    ></tui-tooltip>
+                </p>
+
+                <div
+                    tuiGroup
+                    orientation="vertical"
+                    class="group"
+                    [collapsed]="true"
+                >
+                    <tui-radio-block
+                        *ngFor="let present of userInfo.present"
+                        class="radio-block"
+                        contentAlign="left"
+                        formControlName="present"
+                        [item]="present.id"
+                        size="l"
+                    >
+                        <div class="radio-block-content">
+                            <div class="radio-block-name">{{present.namePresent}}</div>
+                            <tui-tooltip
+                                direction="top"
+                                [content]="present.description"
+                            ></tui-tooltip>
+                        </div>
+                    </tui-radio-block>
+                </div>
+                <tui-error
+                    formControlName="present"
+                    [error]="[] | tuiFieldError | async"
+                ></tui-error>
+            </div>
+
+        </form>
+
+        <p>А если вы заблудились или в день свадьбы у вас возникли вопросы, то вы можете обратиться с ними к друзьям невесты и жениха:
+            Анастасия <br/><i><b>+7 (915) 616-78-70</b></i></p>
+        <br/>
+        <p><b>P.S.</b></p>
+        <p>Будем благодарны, если вы воздержитесь от криков «Горько!» на празднике. Для нас поцелуй является знаком выражения чувств, он не может быть по заказу.</p>
+        <br/>
+        <p>На территории проведения свадьбы будет возможность остаться в отеле по своему желанию. Забронировать номер вы можете по <a tuiLink href="https://istoriya-park-hotel.ru" target="_blank">ссылке</a></p>
+        <br/>
+        <button class="send" (click)="send()">Отправить ответы</button>
+    </div>
+</div>

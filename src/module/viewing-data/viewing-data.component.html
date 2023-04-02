@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="container-table">
+        <table class="tui-table">
+            <tbody *ngIf="data$ | async as data">
+            <tr class="tui-table__tr tui-table__tr_hover_disabled">
+                <th class="tui-table__th">Имя</th>
+                <th class="tui-table__th">Спутники</th>
+                <th class="tui-table__th">Алкоголь</th>
+                <th class="tui-table__th">Трансфер</th>
+                <th class="tui-table__th">Подарки</th>
+                <th class="tui-table__th tui-table__th_last"></th>
+            </tr>
+            <tr class="tui-table__tr" [ngClass]="{not: !info.isCome && info.isCome !== null, success: info.isCome && info.isCome !== null}" *ngFor="let info of data.data">
+                <td class="tui-table__td">{{info.name}}</td>
+                <td class="tui-table__td"><span *ngFor="let satellite of info.satellites">{{satellite}},   </span></td>
+                <td class="tui-table__td"><span *ngFor="let a of info.alcohol">{{a}} </span></td>
+                <td class="tui-table__td">{{info.transport}}</td>
+                <td class="tui-table__td" ><span *ngFor="let p of info.present">{{p}} </span></td>
+                <td class="tui-table__td tui-table__td_last" ><button tuiButton size="s" (click)="write(info.id)">Ссылка</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="button">
+        <button tuiButton (click)="showDialog()">Добавить</button>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<ng-template
+    let-observer
+    [tuiDialogOptions]="{label: 'Создание приглашения', size: 's'}"
+    [(tuiDialog)]="open"
+>
+    <form
+        [formGroup]="exampleForm"
+        (ngSubmit)="observer.complete()"
+    >
+        <p>Заполните поле для создания приглашения!</p>
+        <tui-input
+            tuiAutoFocus
+            formControlName="exampleControl"
+        >
+            Имя
+        </tui-input>
+        <br/>
+        <p>
+            <button
+                tuiButton
+                (click)="create()"
+            >
+                Ok
+            </button>
+        </p>
+    </form>
+</ng-template>

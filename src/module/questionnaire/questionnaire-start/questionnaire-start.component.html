@@ -1,0 +1,49 @@
+<div class="content" *ngIf="userInfo$ | async as userInfo">
+    <p class="title">
+        Приглашаем<br/>
+        <b>{{userInfo.name}}</b> <br/>
+        на свадьбу
+    </p>
+
+    <p class="name">
+        Кирилла <br/>
+        & <br/>
+        Натальи
+    </p>
+
+    <div class="date">
+        <div class="line">пятница</div>
+        <span class="number-date">21</span>
+        <div class="line">   июля   </div>
+    </div>
+
+    <div class="center">
+        <div class="date-countdown" *ngIf="dateCountdown$ | async as date">
+            <table class="tui-table tui-table_font-size_l tui-table__td_text_right">
+                <tbody>
+                <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                    <td class="tui-table__td tui-table__td_align_center">{{date.m}}</td>
+                    <td class="tui-table__td tui-table__td_align_center">{{date.d | number: '2.0-0'}}</td>
+                    <td class="tui-table__td tui-table__td_align_center">{{date.h | number: '2.0-0'}}</td>
+                    <td class="tui-table__td tui-table__td_align_center">{{date.min | number: '2.0-0'}}</td>
+                    <td class="tui-table__td tui-table__td_align_center">{{date.s | number: '2.0-0'}}</td>
+                </tr>
+                <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
+                    <td class="tui-table__td tui-table__td_text_right">месяцев</td>
+                    <td class="tui-table__td ">дней</td>
+                    <td class="tui-table__td ">часов</td>
+                    <td class="tui-table__td ">минут</td>
+                    <td class="tui-table__td ">секунд</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br/>
+    <br/>
+
+    <div class="buttons">
+        <button class="button" (click)="cancel()">Нет, я не смогу</button>
+        <button class="button" [routerLink]="'../inquirer/' + id">Да, я приду</button>
+    </div>
+</div>
