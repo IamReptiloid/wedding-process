@@ -33,7 +33,7 @@ export class ViewingDataComponent implements OnInit{
     }
 
     write(id: number) {
-        navigator.clipboard.writeText(`http://localhost:80/questionnaire/${id}`).then()
+        navigator.clipboard.writeText(`http://wedding-of-kiril-and-natalia.ru/questionnaire/${id}`).then()
         this.alertService.open(
             '',
             {label: 'Ссылка скопирована', status:TuiNotification.Info}
