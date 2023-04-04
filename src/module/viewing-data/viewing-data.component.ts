@@ -33,7 +33,22 @@ export class ViewingDataComponent implements OnInit{
     }
 
     write(id: number) {
-        navigator.clipboard.writeText(`http://wedding-of-kiril-and-natalia.ru/questionnaire/${id}`).then()
+        const textArea = document.createElement("textarea");
+        textArea.value = `http://wedding-of-kiril-and-natalia.ru/questionnaire/${id}`;
+
+        textArea.style.position = "absolute";
+        textArea.style.left = "-999999px";
+
+        document.body.prepend(textArea);
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+        } catch (error) {
+            console.error(error);
+        } finally {
+            textArea.remove();
+        }
         this.alertService.open(
             '',
             {label: 'Ссылка скопирована', status:TuiNotification.Info}

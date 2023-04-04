@@ -25,7 +25,6 @@ export class QuestionnaireInquirerComponent implements OnInit {
     readonly form = new FormGroup({
         present: new FormControl(0, Validators.required),
         transfer: new FormControl('', Validators.required),
-        alcohol: new FormControl('', Validators.required),
         satellites: new FormArray([new FormControl('', Validators.required)])
     })
     readonly userInfo$ = this.backendService.getUserInfo(this.route.snapshot.params['id'])
@@ -76,7 +75,7 @@ export class QuestionnaireInquirerComponent implements OnInit {
             this.backendService.save({
                 isCome: true,
                 id: Number(this.route.snapshot.params['id']),
-                alcohol: [this.form.controls['alcohol'].value as string],
+                alcohol: [''],
                 transport: this.form.controls['transfer'].value as string,
                 presents: [this.form.controls['present'].value as number],
                 satellites: satellitesNames[0] === null? [] : satellitesNames as string[]

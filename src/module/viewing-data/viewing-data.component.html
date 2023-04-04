@@ -5,7 +5,6 @@
             <tr class="tui-table__tr tui-table__tr_hover_disabled">
                 <th class="tui-table__th">Имя</th>
                 <th class="tui-table__th">Спутники</th>
-                <th class="tui-table__th">Алкоголь</th>
                 <th class="tui-table__th">Трансфер</th>
                 <th class="tui-table__th">Подарки</th>
                 <th class="tui-table__th tui-table__th_last"></th>
@@ -13,7 +12,6 @@
             <tr class="tui-table__tr" [ngClass]="{not: !info.isCome && info.isCome !== null, success: info.isCome && info.isCome !== null}" *ngFor="let info of data.data">
                 <td class="tui-table__td">{{info.name}}</td>
                 <td class="tui-table__td"><span *ngFor="let satellite of info.satellites">{{satellite}},   </span></td>
-                <td class="tui-table__td"><span *ngFor="let a of info.alcohol">{{a}} </span></td>
                 <td class="tui-table__td">{{info.transport}}</td>
                 <td class="tui-table__td" ><span *ngFor="let p of info.present">{{p}} </span></td>
                 <td class="tui-table__td tui-table__td_last" ><button tuiButton size="s" (click)="write(info.id)">Ссылка</button></td>
