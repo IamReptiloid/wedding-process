@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {IBackend} from "../interface/IBackend";
 
-const BACK = 'http://localhost:8080/questionnaire'
+const BACK = 'http://wedding-of-kiril-and-natalia.ru:8080/questionnaire'
 
 @Injectable({providedIn: 'root'})
 export class BackendService implements IBackend{
