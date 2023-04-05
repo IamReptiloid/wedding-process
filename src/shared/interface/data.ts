@@ -3,7 +3,9 @@ export interface Data {
         id: number;
         name: string;
         isCome: boolean | null;
-        present: string[] | null;
+        presents: {
+            name: string
+        } | null;
         satellites?: {
             nameSatellites: string
         }[] | null;

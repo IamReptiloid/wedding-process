@@ -9,6 +9,6 @@ export interface IBackend {
     getData(): Observable<Data>
     getUserInfo(id: number): Observable<UserInfo>
     create(name: string): Observable<User>
-    save(info: {presents: number[], id: number, isCome: boolean, transport: string, satellites: string[], alcohol: string[]}): void
+    save(info: {presents: number, id: number, isCome: boolean, transport: string, satellites: string[], alcohol: string[]}): void
     notCum(id: number): Observable<any>
 }

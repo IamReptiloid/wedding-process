@@ -1,7 +1,6 @@
 export interface UserInfo {
     name: string
-    id: number
-    present: {
+    presents: {
         id: number
         file: string
         name: string

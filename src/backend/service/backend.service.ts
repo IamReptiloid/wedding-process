@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {IBackend} from "../interface/IBackend";
 
-const BACK = 'http://wedding-of-kiril-and-natalia.ru:8080/questionnaire'
+const BACK = 'http://localhost:8080/questionnaire'
 
 @Injectable({providedIn: 'root'})
 export class BackendService implements IBackend{
@@ -24,7 +24,7 @@ export class BackendService implements IBackend{
         return this.httpClient.post<User>(`${BACK}/create`, {name})
     }
 
-    save(info: {presents: number[], id: number, isCome: boolean, transport: string, satellites: string[], alcohol: string[]}) {
+    save(info: {presents: number, id: number, isCome: boolean, transport: string, satellites: string[], alcohol: string[]}) {
         this.httpClient.post(`${BACK}/save`, info).subscribe()
     }
 

@@ -13,7 +13,7 @@
                 <td class="tui-table__td">{{info.name}}</td>
                 <td class="tui-table__td"><span *ngFor="let satellite of info.satellites">{{satellite}},   </span></td>
                 <td class="tui-table__td">{{info.transport}}</td>
-                <td class="tui-table__td" ><span *ngFor="let p of info.present">{{p}} </span></td>
+                <td class="tui-table__td" >{{info.presents ? info.presents.name : ''}}</td>
                 <td class="tui-table__td tui-table__td_last" ><button tuiButton size="s" (click)="write(info.id)">Ссылка</button></td>
             </tr>
             </tbody>

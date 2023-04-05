@@ -16,7 +16,7 @@ export class BackenMockService implements IBackend{
                 id: 1,
                 name: 'string',
                 isCome: null,
-                present: null,
+                presents: null,
                 satellites: null,
                 alcohol: null,
                 transport: null
@@ -28,7 +28,7 @@ export class BackenMockService implements IBackend{
         return of({
             name: 'string',
             id: 1,
-            present: [
+            presents: [
                 {
                     id: 1,
                     file: '',
@@ -55,7 +55,7 @@ export class BackenMockService implements IBackend{
         return of('');
     }
 
-    save(info: { presents: number[]; id: number; isCome: boolean; transport: string; satellites: string[]; alcohol: string[] }): void {
+    save(info: { presents: number; id: number; isCome: boolean; transport: string; satellites: string[]; alcohol: string[] }): void {
         console.log('save!!')
     }
 

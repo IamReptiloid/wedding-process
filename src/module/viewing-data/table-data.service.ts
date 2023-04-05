@@ -26,7 +26,7 @@ export class TableDataService {
     create(name: string) {
         this.backendService.create(name).subscribe(newId => {
             this.dataTable$.next({
-                data: [...this.dataTable$.value.data, {name, id: newId.id, isCome: null, satellites: null, alcohol: null, present: null, transport: null}]
+                data: [...this.dataTable$.value.data, {name, id: newId.id, isCome: null, satellites: null, alcohol: null, presents: null, transport: null}]
             })
         })
     }

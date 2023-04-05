@@ -79,7 +79,7 @@ export class QuestionnaireInquirerComponent implements OnInit {
                 id: Number(this.route.snapshot.params['id']),
                 alcohol: [''],
                 transport: this.form.controls['transfer'].value as string,
-                presents: [this.form.controls['present'].value as number],
+                presents: this.form.controls['present'].value as number,
                 satellites: satellitesNames[0] === null? [] : satellitesNames as string[]
 
             })
