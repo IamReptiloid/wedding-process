@@ -4,7 +4,7 @@ export interface UserInfo {
     present: {
         id: number
         file: string
-        namePresent: string
+        name: string
         description: string
     }[]
 }

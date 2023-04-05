@@ -3,6 +3,7 @@ import {interval, map} from "rxjs";
 import {TuiAlertService, TuiNotification} from "@taiga-ui/core";
 import {ActivatedRoute} from "@angular/router";
 import {BackendService} from "../../../backend/service/backend.service";
+import {BACKEND_TOKEN, IBackend} from "../../../backend/interface/IBackend";
 
 @Component({
     selector: 'app-questionnaire',
@@ -14,10 +15,12 @@ export class QuestionnaireStartComponent {
     private readonly dateStart = new Date(2023, 7, 21, 0)
     readonly dateCountdown$ = interval().pipe(
         map(_ => {
+            const oneDay = 1000 * 60 * 60 * 24
             const date = new Date();
+            const diffInTime = this.dateStart.getTime() - date.getTime()
+            const diffInDays = Math.round(diffInTime / oneDay);
             return {
-                m: this.dateStart.getMonth() - date.getMonth(),
-                d: (this.dateStart.getHours() - date.getHours()) > 0? this.dateStart.getDate() - date.getMonth() : this.dateStart.getDate() - date.getMonth() - 1,
+                d: diffInDays,
                 h: this.getHours(date),
                 min: 60 - date.getMinutes(),
                 s: 60 - date.getSeconds()
@@ -30,12 +33,13 @@ export class QuestionnaireStartComponent {
     constructor(
         @Inject(TuiAlertService) private readonly alertService: TuiAlertService,
         private route: ActivatedRoute,
-        private readonly backendService: BackendService
+        @Inject(BACKEND_TOKEN)
+        private readonly backendService: IBackend
     ) {
     }
 
     cancel() {
-        this.backendService.nocCum(this.id).subscribe()
+        this.backendService.notCum(this.id).subscribe()
         this.alertService.open(
             'Но вы еще можете изменить ответ',
             {label: 'Ваш ответ отправлен', status:TuiNotification.Success}

@@ -11,36 +11,18 @@
             <br/>
         </p>
         <b>Программа мероприятия</b>
-
         <div class="container-table-container">
+            <br/>
+
             <div class="table-container">
-                <table class="tui-table tui-table_font-size_l tui-table__td_text_right">
-                    <tbody>
-                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
-                        <td class="tui-table__td tui-table__td_text_right">15:00</td>
-                        <td class="tui-table__td ">Фуршет</td>
-                    </tr>
-                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
-                        <td class="tui-table__td tui-table__td_text_right">16:00</td>
-                        <td class="tui-table__td">Свадебный банкет</td>
-                    </tr>
-                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
-                        <td class="tui-table__td tui-table__td_text_right">20:00</td>
-                        <td class="tui-table__td">Вынос торта</td>
-                    </tr>
-                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
-                        <td class="tui-table__td tui-table__td_text_right">21:00-22:30</td>
-                        <td class="tui-table__td">Дискотека</td>
-                    </tr>
-                    <tr class="tui-table__tr tui-table__tr_border_none tui-table__tr_hover_disabled">
-                        <td class="tui-table__td tui-table__td_text_right">22:30</td>
-                        <td class="tui-table__td">Трансфер в город</td>
-                    </tr>
-                    </tbody>
-                </table>
+                Фуршет - 15:00 <br/>
+                Свадебный банкет -16:00 <br/>
+                Вынос торта - 20:00 <br/>
+                Дискотека - 21:00-22:30
+                Трансфер в город - 22:30
             </div>
         </div>
-
+        <br/>
 
         <div class="block">
             <p class="info">
@@ -63,7 +45,7 @@
 
             <div class="block">
                 <p class="info">
-                    Банкет состоится в КСК История по адресу Сергеевка д. 47. Начало в 15:00. Нужен ли вам трансфер до места проведения мероприятия
+                    Банкет состоится в КСК История по адресу Сергеевка д. 47. Начало в 15:00. Для вашего удобства будет организован трансфер. Он пойдет по маршруту Кальное ТЦ Круиз-Победа (остановка ТЦ Виктория Плаза со стороны торгового центра)- Московское шоссе (остановка таможня) - КСК История. Время отправления трансфера 13:30.
                 </p>
 
                 <div
@@ -121,7 +103,6 @@
                     formControlName="transfer"
                     [error]="[] | tuiFieldError | async"
                 ></tui-error>
-                <p>Для вашего удобства будет организован трансфер. Он пойдет по маршруту Кальное ТЦ Круиз-Победа (остановка ТЦ Виктория Плаза со стороны торгового центра)- Московское шоссе (остановка таможня) - КСК История. Время отправления трансфера 13:30.</p>
             </div>
 
             <div class="block">
@@ -199,7 +180,7 @@
                         size="l"
                     >
                         <div class="radio-block-content">
-                            <div class="radio-block-name">{{present.namePresent}}</div>
+                            <div class="radio-block-name">{{present.name}}</div>
                             <tui-tooltip
                                 direction="top"
                                 [content]="present.description"
@@ -216,8 +197,8 @@
         </form>
 
         <p>А если вы заблудились или в день свадьбы у вас возникли вопросы, то вы можете обратиться с ними к друзьям невесты и жениха:
-            <br/> Анастасия<i><b>+7 (915) 616-78-70</b></i>
-            <br/> Александр <i><b>8 (999) 879-89-82</b></i>
+            <br/> Анастасия: <br/><i><b>+7 (915) 616-78-70</b></i>
+            <br/> Александр: <br/><i><b>8 (999) 879-89-82</b></i>
         </p>
         <br/>
         <p><b>P.S.</b></p>

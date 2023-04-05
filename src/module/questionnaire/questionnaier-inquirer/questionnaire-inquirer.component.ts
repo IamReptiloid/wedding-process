@@ -5,6 +5,7 @@ import {TuiAlertService, TuiNotification} from "@taiga-ui/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TUI_VALIDATION_ERRORS} from "@taiga-ui/kit";
 import {BackendService} from "../../../backend/service/backend.service";
+import {BACKEND_TOKEN, IBackend} from "../../../backend/interface/IBackend";
 
 @Component({
     selector: 'app-questionnaire-inquirer',
@@ -32,7 +33,8 @@ export class QuestionnaireInquirerComponent implements OnInit {
     constructor(
         @Inject(TuiAlertService) private readonly alertService: TuiAlertService,
         private route: ActivatedRoute,
-        private readonly backendService: BackendService,
+        @Inject(BACKEND_TOKEN)
+        private readonly backendService: IBackend,
         private routers: Router
     ) {}
 

@@ -6,6 +6,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
+import {BACKEND_TOKEN} from "../../backend/interface/IBackend";
+import {BackendService} from "../../backend/service/backend.service";
+import {BackenMockService} from "../../backend/service/backen.mock.service";
 
 @NgModule({
     declarations: [
@@ -20,6 +23,16 @@ import {HttpClientModule} from "@angular/common/http";
         TuiAlertModule,
         TuiDialogModule,
         HttpClientModule
+    ],
+    providers: [
+        {
+            provide: BACKEND_TOKEN,
+            useClass: BackendService
+        },
+        // {
+        //     provide: BACKEND_TOKEN,
+        //     useClass: BackenMockService
+        // }
     ],
     bootstrap: [AppComponent]
 })

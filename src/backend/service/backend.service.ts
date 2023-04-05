@@ -3,11 +3,12 @@ import {Data, User} from "../../shared/interface/data";
 import {UserInfo} from "../../shared/interface/user-info";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
+import {IBackend} from "../interface/IBackend";
 
 const BACK = 'http://wedding-of-kiril-and-natalia.ru:8080/questionnaire'
 
 @Injectable({providedIn: 'root'})
-export class BackendService {
+export class BackendService implements IBackend{
     constructor(private readonly httpClient: HttpClient) {
     }
 
@@ -27,7 +28,7 @@ export class BackendService {
         this.httpClient.post(`${BACK}/save`, info).subscribe()
     }
 
-    nocCum(id: number): Observable<any> {
+    notCum(id: number): Observable<any> {
         return this.httpClient.post<any>(`${BACK}/notcum`, {id})
     }
 }

@@ -1,14 +1,17 @@
 import {BackendService} from "../../backend/service/backend.service";
-import {Injectable} from "@angular/core";
+import {Inject, Injectable} from "@angular/core";
 import {BehaviorSubject, Observable} from "rxjs";
 import {Data} from "../../shared/interface/data";
+import {BACKEND_TOKEN, IBackend} from "../../backend/interface/IBackend";
 
 @Injectable()
 export class TableDataService {
     private readonly dataTable$ = new BehaviorSubject<Data>({data: []})
 
-    constructor(private readonly backendService: BackendService) {
-    }
+    constructor(
+        @Inject(BACKEND_TOKEN)
+        private readonly backendService: IBackend
+    ) {}
 
     getData(): Observable<any> {
         return this.dataTable$.asObservable()
