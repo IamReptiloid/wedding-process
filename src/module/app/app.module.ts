@@ -25,14 +25,14 @@ import {BackenMockService} from "../../backend/service/backen.mock.service";
         HttpClientModule
     ],
     providers: [
-        {
-            provide: BACKEND_TOKEN,
-            useClass: BackendService
-        },
         // {
         //     provide: BACKEND_TOKEN,
-        //     useClass: BackenMockService
-        // }
+        //     useClass: BackendService
+        // },
+        {
+            provide: BACKEND_TOKEN,
+            useClass: BackenMockService
+        }
     ],
     bootstrap: [AppComponent]
 })
