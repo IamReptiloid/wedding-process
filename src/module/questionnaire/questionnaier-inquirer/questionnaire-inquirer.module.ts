@@ -4,7 +4,14 @@ import {QuestionnaireInquirerComponent} from "./questionnaire-inquirer.component
 import {TuiFieldErrorPipeModule, TuiInputModule, TuiRadioBlockModule} from "@taiga-ui/kit";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {QuestionnaireInquirerRoutingModule} from "./questionnaire-inquirer-routing.module";
-import {TuiButtonModule, TuiErrorModule, TuiGroupModule, TuiLinkModule, TuiTooltipModule} from "@taiga-ui/core";
+import {
+    TuiButtonModule,
+    TuiErrorModule,
+    TuiGroupModule, TuiHintModule,
+    TuiLinkModule,
+    TuiSvgModule,
+    TuiTooltipModule
+} from "@taiga-ui/core";
 
 @NgModule({
     declarations: [
@@ -23,6 +30,8 @@ import {TuiButtonModule, TuiErrorModule, TuiGroupModule, TuiLinkModule, TuiToolt
         TuiErrorModule,
         TuiFieldErrorPipeModule,
         TuiLinkModule,
+        TuiSvgModule,
+        TuiHintModule,
     ],
     providers: [],
     exports: [QuestionnaireInquirerComponent]

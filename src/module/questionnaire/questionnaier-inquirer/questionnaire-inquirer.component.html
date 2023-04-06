@@ -18,7 +18,7 @@
                 Фуршет - 15:00 <br/>
                 Свадебный банкет -16:00 <br/>
                 Вынос торта - 20:00 <br/>
-                Дискотека - 21:00-22:30
+                Дискотека - 21:00-22:30 <br/>
                 Трансфер в город - 22:30
             </div>
         </div>
@@ -158,7 +158,7 @@
 
             <div class="block">
                 <p class="info">
-                    Если вы не знаете, что подарить, то мы будем рады вкладу в бюджет нашей семьи. Но если и такой вариант вам не подходит, то будем благодарны принять подарок из нашего виш листа.
+                    Если вы не знаете, что подарить, то мы рады вкладу в бюджет нашей семьи или будем благодарны, если вы выбираете подарок предложенный нами из нашего списка.
                     <tui-tooltip
                         content="Отображаемые подарки еще не забранированы другими приглашенными"
                         direction="top-left"
@@ -181,10 +181,17 @@
                     >
                         <div class="radio-block-content">
                             <div class="radio-block-name">{{present.name}}</div>
-                            <tui-tooltip
-                                direction="top"
-                                [content]="present.description"
-                            ></tui-tooltip>
+                            <tui-svg
+                                src="tuiIconAlertCircle"
+                                [tuiHint]="template"
+                                tuiHintDirection="top-left"
+                                *ngIf="present.description"
+                                class="present-hint"
+                            >
+                            </tui-svg>
+                            <ng-template #template>
+                                <a tuiLink class="link" [href]="present.description">{{present.description}}</a>
+                            </ng-template>
                         </div>
                     </tui-radio-block>
                 </div>

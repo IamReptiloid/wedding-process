@@ -45,7 +45,7 @@ export class BackenMockService implements IBackend{
                     id: 3,
                     file: '',
                     name: 'подарок3',
-                    description: "sdf"
+                    description: ""
                 }
             ]
         });
