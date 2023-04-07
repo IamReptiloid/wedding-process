@@ -22,10 +22,10 @@ import {BACKEND_TOKEN, IBackend} from "../../../backend/interface/IBackend";
     ],
 })
 export class QuestionnaireInquirerComponent implements OnInit {
-    readonly isSatellites = new FormControl('', Validators.required)
+    readonly isSatellites = new FormControl('', [Validators.required])
     readonly form = new FormGroup({
-        present: new FormControl(0, Validators.required),
-        transfer: new FormControl('', Validators.required),
+        present: new FormControl('', [Validators.required]),
+        transfer: new FormControl('', [Validators.required]),
         satellites: new FormArray([new FormControl('', Validators.required)])
     })
     readonly userInfo$ = this.backendService.getUserInfo(this.route.snapshot.params['id'])
@@ -79,7 +79,7 @@ export class QuestionnaireInquirerComponent implements OnInit {
                 id: Number(this.route.snapshot.params['id']),
                 alcohol: [''],
                 transport: this.form.controls['transfer'].value as string,
-                presents: this.form.controls['present'].value as number,
+                presents: Number(this.form.controls['present'].value),
                 satellites: satellitesNames[0] === null? [] : satellitesNames as string[]
 
             })
